@@ -1,6 +1,7 @@
 from .base import *
 
 DEBUG = True
+SECRET_KEY = "django-insecure-12345abcd!@#%xyz"
 ALLOWED_HOSTS = ['*']
 
 # Development database
