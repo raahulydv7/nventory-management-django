@@ -3,9 +3,9 @@ from .models import User
 from .forms import UserForm
 from django.contrib.auth import login
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from .decorators import admin_required
 
-@login_required
+@admin_required
 def register_user(request):
     if request.method=="POST":
         form = UserForm(request.POST)
