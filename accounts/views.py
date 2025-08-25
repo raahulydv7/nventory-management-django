@@ -20,7 +20,8 @@ def register_user(request):
     return render(request, 'accounts/user_register.html',{'form':form})
 
 
+
+
 @login_required_custom
 def home(request):
     return render(request, 'home.html')
-
