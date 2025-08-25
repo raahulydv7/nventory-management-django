@@ -3,7 +3,7 @@ from .models import User
 from .forms import UserForm
 from django.contrib.auth import login
 from django.contrib import messages
-from .decorators import admin_required
+from .decorators import admin_required,staff_required,login_required_custom
 
 @admin_required
 def register_user(request):
@@ -18,3 +18,9 @@ def register_user(request):
     else:
         form = UserForm()
     return render(request, 'accounts/user_register.html',{'form':form})
+
+
+@login_required_custom
+def home(request):
+    return render(request, 'home.html')
+
