@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from .models import User
 
 class UserForm(UserCreationForm):
@@ -23,4 +23,20 @@ class UserForm(UserCreationForm):
         self.fields['email'].widget.attrs['placeholder'] = 'Enter email'
         self.fields['password1'].widget.attrs['placeholder'] = 'Enter password'
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm password'
-        
+
+
+class UserAuthenticationForm(AuthenticationForm):
+    username = forms.CharField(   
+       label="Username",
+        widget=forms.TextInput(
+            attrs={
+                'class': "form-control",
+                'placeholder': "Enter your username"
+            }))
+    password = forms.CharField(
+        label="Password",
+        widget=forms.PasswordInput(
+            attrs={
+                'class': "form-control",
+                'placeholder': "Enter your password"
+            }))
