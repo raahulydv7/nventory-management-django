@@ -23,3 +23,4 @@ class UserForm(UserCreationForm):
         self.fields['email'].widget.attrs['placeholder'] = 'Enter email'
         self.fields['password1'].widget.attrs['placeholder'] = 'Enter password'
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm password'
+        
